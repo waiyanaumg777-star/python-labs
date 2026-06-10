@@ -19,6 +19,9 @@
 ## 2. Design the Algorithm
 
 ### 2.1. Logic Diagram Text representation
+
+<img width="459" height="769" alt="Screenshot 2026-06-10 170425" src="https://github.com/user-attachments/assets/6335688a-d22d-4d84-ac86-811b403ce9da" />
+
 * Inputs `Age >= 13` and `Accompanied` connect to an **OR** gate.
 * The output of the **OR** gate and `Has Ticket` connect to an **AND** gate.
 
