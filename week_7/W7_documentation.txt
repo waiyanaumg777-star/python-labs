@@ -1,0 +1,61 @@
+WEEK 7 – TUTORIAL 7
+FoodExpress Order Calculator
+================================
+
+1. TEST THE PROGRAM AND IDENTIFY THE BUGS IN main.py
+
+The starter template is incomplete: the import statement, function call, and calculation are left as blanks. If these blanks are not completed, the program cannot run. The program also needs input validation because converting text to float or int can raise a ValueError. Without handling this error, the program may crash when a user enters invalid input.
+
+The corrected main.py imports calculate_total from food_order.py, reads the price and quantity, calls the calculation function, and displays the total to two decimal places. It catches ValueError and displays an error message rather than allowing the program to crash.
+
+2. DEBUGGING AND INPUT VALIDATION
+
+The calculation and validation logic is placed in food_order.py.
+
+The calculate_total(price, quantity) function checks that:
+- Price is a number, is finite, and is greater than zero.
+- Quantity is a whole number (integer) and is greater than zero.
+- Invalid values raise ValueError with a clear message.
+- A valid order returns price multiplied by quantity.
+
+The main program converts the entered price to a float and quantity to an integer. It catches invalid numeric input and validation errors from calculate_total.
+
+3. PYTEST TESTING
+
+The test_food_order.py file tests the calculation and invalid input handling.
+
+Test cases:
+1. calculate_total(10, 2) returns 20.
+2. A total of 30 is calculated correctly.
+3. A total of 100 is calculated correctly.
+4. A total of 10 is calculated correctly.
+5. Text used as a price is rejected with ValueError.
+6. Text used as a quantity is rejected with ValueError.
+7. Zero and negative prices are rejected.
+8. Zero and negative quantities are rejected.
+
+Run the tests from inside the week_7 folder:
+
+    pip install pytest
+    pytest
+
+The expected result is that all eight test functions pass.
+
+4. HOW TO RUN THE PROGRAM
+
+From inside the week_7 folder, run:
+
+    python main.py
+
+Example input:
+    Price (RM): 10
+    Quantity: 2
+
+Expected output:
+    Total Payment = RM 20.00
+
+If invalid text is entered for the price or quantity, the program displays an error message instead of crashing.
+
+5. CONCLUSION
+
+The FoodExpress order calculator separates the calculation and validation function from the main user interaction. Input validation prevents invalid prices and quantities from being accepted. Pytest checks the expected calculations and confirms that invalid values are rejected.
